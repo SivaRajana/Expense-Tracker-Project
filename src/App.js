@@ -1,8 +1,9 @@
-import ExpenseItem from "./components/Expenses/ExpenseItem";
-import Card from "./components/UI/Card";
+import React from 'react';
 import NewExpense from "./components/NewExpense/NewExpense";
+import Expense from './components/Expenses/Expense';
 
 const App = () => {
+    
   const expenses = [
     {
       id: 'e1',
@@ -29,18 +30,11 @@ const App = () => {
   const expenseDataHandler = (newExpense) => {
     console.log(newExpense);
   }
-
-
-
-  return (
+  
+ return (
     <div>
       <NewExpense onExpenseData = {expenseDataHandler}/> {/* passing function as prop here */}
-      <Card className="expense-item-bg">
-        <ExpenseItem title={expenses[1].title} date={expenses[1].date} amount={expenses[1].amount}/>
-        <ExpenseItem title={expenses[2].title} date={expenses[2].date} amount={expenses[2].amount}/>
-        <ExpenseItem title={expenses[3].title} date={expenses[3].date} amount={expenses[3].amount}/>
-        <ExpenseItem title={expenses[0].title} date={expenses[0].date} amount={expenses[0].amount}/>
-      </Card>
+      <Expense expenses={expenses}/>
     </div>
   );
 }

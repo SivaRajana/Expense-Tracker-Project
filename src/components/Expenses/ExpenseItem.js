@@ -10,7 +10,7 @@ const ExpenseItem = (props) => {
         setTitle('updated!!');
     }
 
-    return (
+    return (     
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <div className='expense-item__description'>
