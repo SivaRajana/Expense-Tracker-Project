@@ -24,9 +24,17 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  // getting the newExpense from from NewExpense component as a parameter while calling onExpenseData prop which is a function
+  const expenseDataHandler = (newExpense) => {
+    console.log(newExpense);
+  }
+
+
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onExpenseData = {expenseDataHandler}/> {/* passing function as prop here */}
       <Card className="expense-item-bg">
         <ExpenseItem title={expenses[1].title} date={expenses[1].date} amount={expenses[1].amount}/>
         <ExpenseItem title={expenses[2].title} date={expenses[2].date} amount={expenses[2].amount}/>
