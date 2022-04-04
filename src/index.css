@@ -10,8 +10,8 @@ html {
 
 body {
   margin: 0;
-  background-color: aqua;
+  background-color: white;
 }
 .expense-item-bg{
-  background-color:red;
+  background-color: #95D1CC;
 }
