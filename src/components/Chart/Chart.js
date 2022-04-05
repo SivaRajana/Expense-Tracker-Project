@@ -3,19 +3,24 @@ import Chartbar from './Chartbar';
 import './Chart.css'
 
 function Chart(props) {
-
-
-
+    const tempArray = props.dataPoints.map(item => item.value)
+    const maxAmountOfYear = Math.max(...tempArray);
+    // console.log(maxAmountOfYear);
     return (
-        <ul className='Chart'>
-            {props.dataPoints.map(eachDataPoint =>
-                <Chartbar
-                    value={eachDataPoint.value}
-                    maxValue={null}
-                    label={eachDataPoint.label}
-                    key={eachDataPoint.label}
-                />)}
-        </ul>
+        <div className='chart'>
+            {props.dataPoints.map(eachDataPoint => {
+                return (
+                    <Chartbar
+                        key={eachDataPoint.label}
+                        value={eachDataPoint.value}
+                        maxValue={maxAmountOfYear}
+                        label={eachDataPoint.label}
+                    />)
+            }
+            )
+            }
+
+        </div>
     )
 }
 
